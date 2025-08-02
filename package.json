@@ -1,0 +1,23 @@
+{
+  "name": "cypress-ai-ticket-estimator",
+  "version": "1.0.0",
+  "description": "Cypress tests for AI Ticket Estimator React application",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test": "cypress run",
+    "test:open": "cypress open"
+  },
+  "keywords": ["cypress", "testing", "react", "typescript"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.1.0",
+    "cypress": "^14.5.3",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "undici-types": "^7.8.0"
+  }
+}

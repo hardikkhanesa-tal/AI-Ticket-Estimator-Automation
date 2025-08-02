@@ -1,0 +1,26 @@
+{
+  "bugTicket": {
+    "issueKey": "4567",
+    "title": "title",
+    "description": "description",
+    "issueType": "Bug",
+    "expectedStoryPoints": 4,
+    "expectedJustification": "Based on the complexity of the issue"
+  },
+  "featureTicket": {
+    "issueKey": "4568",
+    "title": "Feature Request",
+    "description": "Add new feature to the application",
+    "issueType": "Feature",
+    "expectedStoryPoints": 8,
+    "expectedJustification": "Feature requests typically require more story points"
+  },
+  "taskTicket": {
+    "issueKey": "4569",
+    "title": "Task",
+    "description": "Simple task description",
+    "issueType": "Task",
+    "expectedStoryPoints": 2,
+    "expectedJustification": "Simple task with minimal complexity"
+  }
+}
