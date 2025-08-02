@@ -2,7 +2,7 @@ import { defineConfig } from "cypress"
 
 export default defineConfig({
   e2e: {
-    baseUrl: "http://localhost:3000",
+    baseUrl: "http://claude-commanders-s3.s3-website.ap-south-1.amazonaws.com",
     supportFile: "cypress/support/e2e.ts",
     specPattern: "cypress/e2e/**/*.cy.ts",
     viewportWidth: 1280,

@@ -1,26 +1,94 @@
 {
-  "bugTicket": {
-    "issueKey": "4567",
-    "title": "title",
-    "description": "description",
-    "issueType": "Bug",
-    "expectedStoryPoints": 4,
-    "expectedJustification": "Based on the complexity of the issue"
-  },
-  "featureTicket": {
-    "issueKey": "4568",
-    "title": "Feature Request",
-    "description": "Add new feature to the application",
-    "issueType": "Feature",
-    "expectedStoryPoints": 8,
-    "expectedJustification": "Feature requests typically require more story points"
-  },
-  "taskTicket": {
-    "issueKey": "4569",
-    "title": "Task",
-    "description": "Simple task description",
-    "issueType": "Task",
-    "expectedStoryPoints": 2,
-    "expectedJustification": "Simple task with minimal complexity"
-  }
+  "tickets": [
+    {
+      "testCaseId": "TC-REP-001",
+      "issueKey": "DL-7491",
+      "title": "Fix repayment failure not logging reason in DB",
+      "description": "In production, failed repayments are not storing failure reasons in repayment_audit table. This makes debugging hard for Ops.",
+      "issueType": "Bug",
+      "expectedStoryPoints": 3,
+      "expectedJustification": "Medium-level backend fix involving DB update and testing across retry scenarios."
+    },
+    {
+      "testCaseId": "TC-LOAN-002",
+      "issueKey": "DL-7472",
+      "title": "Retry stuck loan onboarding cases automatically",
+      "description": "Some loans are stuck — system should try them again automatically by processing pending EDIs in onboarding flow.",
+      "issueType": "Task",
+      "expectedStoryPoints": 5,
+      "expectedJustification": "Requires logic for identifying and retrying onboarding failures."
+    },
+    {
+      "testCaseId": "TC-API-001-B",
+      "issueKey": "DL-7488",
+      "title": "Add SUBMITTED status to loan onboarding API",
+      "description": "Partner teams need better visibility. Add a new SUBMITTED status to the /loans endpoint and update API schema.",
+      "issueType": "Feature",
+      "expectedStoryPoints": 8,
+      "expectedJustification": "New API status addition + code changes + backward compatibility testing + documentation."
+    },
+    {
+      "testCaseId": "TC-PROD-002",
+      "issueKey": "DL-7679",
+      "title": "UAT missing repayment scheduler that’s already live in prod",
+      "description": "Add the repayment scheduler to the UAT environment to match production setup for parity testing.",
+      "issueType": "Task",
+      "expectedStoryPoints": 1,
+      "expectedJustification": "Simple infra parity task; mostly configuration."
+    },
+    {
+      "testCaseId": "TC-MANDATE-001",
+      "issueKey": "DL-7483",
+      "title": "Alert when NACH mandate submission is incomplete",
+      "description": "Raise alerts for NACH mandates that fail silently and get stuck in awaiting_ack state without response.",
+      "issueType": "Bug",
+      "expectedStoryPoints": 1,
+      "expectedJustification": "Minor alerting logic; no business logic change."
+    },
+    {
+      "testCaseId": "TC-CREATE-001",
+      "issueKey": "DL-7472",
+      "title": "Enable fallback creation for failed EDI syncs",
+      "description": "Create fallback logic to handle EDI sync failures during loan onboarding, to ensure smoother flow retries.",
+      "issueType": "Feature",
+      "expectedStoryPoints": 5,
+      "expectedJustification": "Retry logic + limited impact flow; needs partial new implementation."
+    },
+    {
+      "testCaseId": "TC-PARTNER-001",
+      "issueKey": "DL-7488",
+      "title": "Adjust partner loan API to handle onboarding statuses",
+      "description": "Support additional onboarding statuses in the partner-facing loan API.",
+      "issueType": "Task",
+      "expectedStoryPoints": 2,
+      "expectedJustification": "Schema changes + minimal logic update."
+    },
+    {
+      "testCaseId": "TC-UAT-001",
+      "issueKey": "DL-7454",
+      "title": "Define rollback procedure after UAT testing",
+      "description": "Build rollback steps to revert repayment flow changes after UAT validation, if needed.",
+      "issueType": "Task",
+      "expectedStoryPoints": 1,
+      "expectedJustification": "Documentation or script-level rollback support."
+    },
+    {
+      "testCaseId": "TC-RELEASE-001",
+      "issueKey": "DL-7450",
+      "title": "Add pre-release checklist for patch v2.40.0",
+      "description": "Add structured checklist to be followed before pushing patch release v2.40.0 to prod.",
+      "issueType": "Task",
+      "expectedStoryPoints": 1,
+      "expectedJustification": "Checklist prep and review; minimal dev work."
+    },
+    {
+      "testCaseId": "TC-TESTING-001",
+      "issueKey": "DL-7479",
+      "title": "STP NEFT testing for new account linking",
+      "description": "Perform STP NEFT validation scenarios on newly integrated account linking flow in staging.",
+      "issueType": "Testing",
+      "expectedStoryPoints": 1,
+      "expectedJustification": "Test case creation + execution; low dev effort."
+    }
+  ]
 }
